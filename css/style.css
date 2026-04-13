@@ -1,1 +1,375 @@
+/* ДОБАВЛЕН СЕЛЕКТОР * */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding-top: 50px;
+  padding-bottom: 110px; /* Увеличено, чтобы контент не перекрывался нижней панелью */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================== Навигация ==================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  padding: 8px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Фикс: градиент не исчезает */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navbar-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  display: block;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ==================== Герой-секция ==================== */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #fff;
+  color: #667eea;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ==================== Секции ==================== */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2d3748;
+}
+
+.section-text {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #4a5568;
+}
+
+.bg-light {
+  background-color: #f7fafc;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.feature-card p {
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+/* Стили для контактов в секции */
+.contact-info {
+  text-align: center;
+  font-size: 1.2rem;
+  background: #f7fafc;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info p {
+  margin: 15px 0;
+  color: #4a5568;
+}
+
+/* ==================== Нижняя панель контактов ==================== */
+.contact-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-bar .container:first-child {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-bar .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact-bar-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.contact-bar .container p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+/* ==================== АДАПТАЦИЯ ==================== */
+@media (max-width: 768px) {
+  /* Навигация */
+  body {
+    padding-bottom: 130px; /* Ещё больше места для нижней панели */
+  }
+
+  .navbar {
+    padding: 8px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Фикс для мобильных */
+  }
+
+  .navbar .container {
+    padding: 0 10px;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-menu {
+    gap: 5px;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  /* Герой-секция */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  /* Секции */
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  /* Фичи */
+  .features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 25px 20px;
+  }
+
+  /* Контактная информация */
+  .contact-info {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .contact-info p {
+    word-break: break-word;
+  }
+
+  /* ========== КОМПАКТНЫЙ ФУТЕР НА МОБИЛЬНЫХ ========== */
+  .contact-bar {
+    padding: 8px 0;
+  }
+
+  .contact-bar-content {
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  .contact-bar-item {
+    font-size: 0.75rem !important;
+    gap: 5px !important;
+    white-space: normal !important; /* Разрешаем перенос текста */
+    word-break: break-word;
+  }
+
+  .contact-bar .container p {
+    font-size: 0.7rem;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  body {
+    padding-bottom: 140px;
+  }
+
+  .contact-bar {
+    padding: 6px 0;
+  }
+
+  .contact-bar-content {
+    gap: 3px !important;
+  }
+
+  .contact-bar-item {
+    font-size: 0.65rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
